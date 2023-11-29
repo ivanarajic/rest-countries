@@ -32,7 +32,7 @@ class Store {
 
   *fetchCountries() {
     try {
-      const res = yield fetch('../../data.json');
+      const res = yield fetch('./data.json');
       const countries = yield res.json();
       return this.data.push(...countries);
     } catch (error) {
