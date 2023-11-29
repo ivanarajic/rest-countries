@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import DetailCard from '../components/DetailCard';
 import { FaArrowLeft } from 'react-icons/fa6';
 import { observer } from 'mobx-react-lite';
-+function Details() {
+function Details() {
   return (
     <div className="px-5 lg:px-20 my-8 flex flex-col gap-12">
       <Link to="/">
@@ -14,6 +14,6 @@ import { observer } from 'mobx-react-lite';
       <DetailCard />
     </div>
   );
-};
+}
 
 export default observer(Details);
