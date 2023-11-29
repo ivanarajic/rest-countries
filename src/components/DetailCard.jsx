@@ -48,7 +48,9 @@ function DetailCard() {
             </p>
             <p>
               Population:{' '}
-              <span className="font-light">{country.population}</span>
+              <span className="font-light">
+                {country.population.toLocaleString()}
+              </span>
             </p>
             <p>
               Region: <span className="font-light">{country.region}</span>

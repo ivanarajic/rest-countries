@@ -15,7 +15,10 @@ function CountryItem({ data }) {
       <div className="text-light-secondary dark:text-white p-5">
         <h2 className="font-extrabold text-lg mb-4">{data.name}</h2>
         <h3 className="font-semibold text-sm">
-          Population: <span className="font-normal">{data.population}</span>
+          Population:{' '}
+          <span className="font-normal">
+            {data.population.toLocaleString()}
+          </span>
         </h3>
         <h3 className="font-semibold text-sm">
           Region: <span className="font-normal">{data.region}</span>
