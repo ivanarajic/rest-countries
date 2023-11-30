@@ -5,7 +5,7 @@ import { observer } from 'mobx-react-lite';
 function Details() {
   return (
     <div className="px-5 lg:px-20 my-8 flex flex-col gap-12">
-      <Link to="/">
+      <Link aria-label="Back to the main page" to="/">
         <button className="flex items-center gap-3 bg-white dark:bg-elements-dark px-6 py-2 dark:text-white text-light-secondary shadow-xl rounded-sm">
           <FaArrowLeft />
           Back

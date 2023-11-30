@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { useParams } from 'react-router';
 import { StoreContext } from '../main';
 import { Link } from 'react-router-dom';
+import { observer } from 'mobx-react-lite';
 
 function DetailCard() {
   const { id } = useParams();
@@ -33,7 +34,11 @@ function DetailCard() {
     "
     >
       <div className="h-64 w-full lg:h-80 lg:w-2/5">
-        <img src={country?.flag} className="w-full h-full object-cover" />
+        <img
+          src={country?.flag}
+          alt={country.name}
+          className="w-full h-full object-cover"
+        />
       </div>
       <div className="self-start lg:self-center lg:w-3/5">
         <h1 className="text-2xl text-light-secondary dark:text-white font-extrabold mt-10 lg:mt-0">
@@ -92,7 +97,7 @@ function DetailCard() {
 
           <div className="flex gap-2 flex-wrap">
             {borderNames.map((border, i) => (
-              <Link to={`/${borders[i]}`} key={i}>
+              <Link aria-label="Go to" to={`/${borders[i]}`} key={i}>
                 <button
                   key={i}
                   className="bg-white dark:bg-elements-dark px-4 py-1 text-sm dark:text-white text-light-secondary shadow-xl rounded-sm font-light"
@@ -108,4 +113,4 @@ function DetailCard() {
   );
 }
 
-export default DetailCard;
+export default observer(DetailCard);

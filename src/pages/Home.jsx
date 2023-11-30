@@ -11,11 +11,10 @@ function Home() {
   const [region, setRegion] = useState('');
   const [search, setSearch] = useState('');
 
-  const handleSearchCountry = action((e) => {
+  const handleSearchCountry = (e) => {
     e.preventDefault();
     setSearch(e.target.value);
-    setRegion(search);
-  });
+  };
 
   useEffect(() => {
     store.fetchCountries();
@@ -29,7 +28,7 @@ function Home() {
       </div>
 
       <div className="grid justify-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 md:gap-6 lg:gap-8 lg:gap-y-16 items-center justify-center m-8 lg:mx-20">
-        {store.filterCountries(region).map((country, index) => (
+        {store.filterCountries(search || region).map((country, index) => (
           <CountryItem key={index} data={country} />
         ))}
       </div>
